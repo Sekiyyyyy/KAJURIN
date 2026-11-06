@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Mode Terang: Warm Alabaster Linen (Putih Hangat, Nyaman & Tidak Menyilaukan) */
+    --neu-base: #f0ede6;
+    --neu-base-hover: #e7e3da;
+    --neu-dark: #d3cdc2;
+    --neu-light: #ffffff;
+    --neu-border: rgba(255, 255, 255, 0.7);
+    --neu-border-subtle: #dbd5ca;
+    --neu-text: #1e2421;
+    --neu-text-muted: #5e6660;
+    --neu-track: #e6e2d8;
+    --neu-table-header: #e4dfd5;
+    --neu-table-stripe: #ece8e1;
+    --neu-table-divide: #dbd5ca;
+  }
+
+  .dark {
+    /* Mode Gelap: Midnight Obsidian Neumorphism (Elegan, Tenang & Taktil) */
+    --neu-base: #17191e;
+    --neu-base-hover: #1e2128;
+    --neu-dark: #0e1014;
+    --neu-light: #252932;
+    --neu-border: rgba(255, 255, 255, 0.08);
+    --neu-border-subtle: #242832;
+    --neu-text: #f0ede6;
+    --neu-text-muted: #94a3b8;
+    --neu-track: #131418;
+    --neu-table-header: #1b1e24;
+    --neu-table-stripe: #191b21;
+    --neu-table-divide: #242832;
+  }
+
+  body {
+    font-family: 'Outfit', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    color: var(--neu-text);
+    background-color: var(--neu-base);
+    letter-spacing: -0.012em;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  /* R-39: Interaction Affordances */
+  a[href],
+  button:not(:disabled),
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled),
+  summary {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  input:disabled,
+  select:disabled {
+    cursor: not-allowed;
+  }
+
+  /* R-32: Visible Focus Rings for Keyboard Navigation */
+  :focus-visible {
+    outline: 2px solid #0d9488;
+    outline-offset: 2px;
+  }
+
+  /* Tabular numbers for times and codes to prevent jitter */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Selection color */
+  ::selection {
+    background-color: #0d948833;
+    color: var(--neu-text);
+  }
+}
+
+/* Neumorphism Component Helpers using Dynamic Theme Variables */
+.neu-surface {
+  background-color: var(--neu-base);
+  box-shadow: 8px 8px 16px var(--neu-dark), -8px -8px 16px var(--neu-light);
+}
+
+.neu-surface-sm {
+  background-color: var(--neu-base);
+  box-shadow: 4px 4px 10px var(--neu-dark), -4px -4px 10px var(--neu-light);
+}
+
+.neu-surface-xs {
+  background-color: var(--neu-base);
+  box-shadow: 2px 2px 6px var(--neu-dark), -2px -2px 6px var(--neu-light);
+}
+
+.neu-flat {
+  box-shadow: 6px 6px 12px var(--neu-dark), -6px -6px 12px var(--neu-light);
+}
+
+.neu-flat-sm {
+  box-shadow: 3px 3px 6px var(--neu-dark), -3px -3px 6px var(--neu-light);
+}
+
+.neu-flat-xs {
+  box-shadow: 2px 2px 4px var(--neu-dark), -2px -2px 4px var(--neu-light);
+}
+
+.neu-inset {
+  background-color: var(--neu-base);
+  box-shadow: inset 3px 3px 6px var(--neu-dark), inset -3px -3px 6px var(--neu-light);
+}
+
+.neu-inset-sm {
+  box-shadow: inset 2px 2px 4px var(--neu-dark), inset -2px -2px 4px var(--neu-light);
+}
+
+.neu-inset-xs {
+  box-shadow: inset 1px 1px 2px var(--neu-dark), inset -1px -1px 2px var(--neu-light);
+}
+
+.neu-button {
+  background-color: var(--neu-base);
+  box-shadow: 3px 3px 6px var(--neu-dark), -3px -3px 6px var(--neu-light);
+  transition: all 0.15s ease;
+}
+.neu-button:hover:not(:disabled) {
+  box-shadow: 1.5px 1.5px 4px var(--neu-dark), -1.5px -1.5px 4px var(--neu-light);
+}
+.neu-button:active:not(:disabled),
+.neu-button.active {
+  box-shadow: inset 2px 2px 4px var(--neu-dark), inset -2px -2px 4px var(--neu-light);
+}
+
+.neu-input {
+  background-color: var(--neu-base);
+  box-shadow: inset 2px 2px 4px var(--neu-dark), inset -2px -2px 4px var(--neu-light);
+  border: 1px solid var(--neu-border-subtle);
+}
+.neu-input:focus {
+  box-shadow: inset 3px 3px 6px var(--neu-dark), inset -3px -3px 6px var(--neu-light);
+  border-color: #0d9488;
+}
+
+/* Print specific styles */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .page-break {
+    page-break-before: always;
+  }
+
+  @page {
+    margin: 1cm;
+    size: A4 portrait;
+  }
+}
+
+@media screen {
+  .print-only {
+    display: none !important;
+  }
+}
+
+/* Scrollbars: dynamic neumorphic tones */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--neu-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--neu-dark);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neu-text-muted);
+}
