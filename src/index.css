@@ -144,15 +144,30 @@
 
 /* Print specific styles */
 @media print {
-  body {
+  @page {
+    margin: 8mm 10mm;
+    size: A4 landscape;
+  }
+
+  html, body {
     background: white !important;
     color: black !important;
     padding: 0 !important;
     margin: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 
-  .no-print {
+  /* Hide app navigation and shell when printing */
+  aside, header, nav, .no-print {
     display: none !important;
+  }
+
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
   }
 
   .print-only {
@@ -161,11 +176,7 @@
 
   .page-break {
     page-break-before: always;
-  }
-
-  @page {
-    margin: 1cm;
-    size: A4 portrait;
+    break-before: page;
   }
 }
 

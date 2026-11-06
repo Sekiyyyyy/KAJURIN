@@ -240,6 +240,7 @@ export default function App() {
           ) : currentView === 'reports' ? (
             <PrintOfficialReport
               loans={loans}
+              items={items}
               onClose={() => setCurrentView('dashboard')}
             />
           ) : currentView === 'master-data' ? (
