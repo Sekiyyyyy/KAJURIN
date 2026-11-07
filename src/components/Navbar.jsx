@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import QRCode from 'qrcode';
+import KajurinLogo from './KajurinLogo';
 import {
   Wifi,
   Camera,
@@ -56,8 +57,8 @@ export default function Navbar({
           <div className="flex items-center justify-between h-16">
             {/* Logo & Identity */}
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold text-lg shadow-sm border border-blue-400/40">
-                K
+              <div className="w-9 h-9 rounded-xl bg-slate-800/80 flex items-center justify-center shadow-sm border border-slate-700/60 p-1">
+                <KajurinLogo size={28} />
               </div>
               <div>
                 <div className="flex items-center gap-2">
