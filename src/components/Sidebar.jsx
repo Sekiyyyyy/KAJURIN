@@ -93,7 +93,7 @@ export default function Sidebar({
             title="Buka Sidebar (Ctrl+B)"
             aria-label="Expand Sidebar"
           >
-            <KajurinLogo size={24} />
+            <KajurinLogo size={26} />
             <div className="absolute left-full ml-3 px-2.5 py-1.5 bg-slate-900/95 text-white dark:bg-slate-100 dark:text-slate-900 text-xs font-semibold rounded-xl shadow-xl whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-200 z-50 flex items-center gap-1.5 border border-white/10 dark:border-slate-800">
               <span className="font-extrabold font-display">KAJURIN</span>
               <span className="text-[10px] text-teal-400 dark:text-teal-600 font-mono font-normal">Buka (Ctrl+B)</span>
@@ -107,7 +107,7 @@ export default function Sidebar({
                 className="w-10 h-10 rounded-xl bg-neu-base neu-flat-sm text-teal-800 dark:text-teal-400 flex items-center justify-center shrink-0 border border-white/60 dark:border-white/10"
                 title="KAJURIN - Ruang Kajur SMK Negeri 1 Beringin"
               >
-                <KajurinLogo size={22} />
+                <KajurinLogo size={24} />
               </div>
               <div className="min-w-0">
                 <span className="font-extrabold text-slate-900 dark:text-slate-100 text-base tracking-tight font-display block leading-tight">
